@@ -1,0 +1,220 @@
+/* ========================================
+ROOT VARIABLES (EDIT THESE TO CHANGE THEME)
+======================================== */
+:root {
+  /* Colors */
+  --primary-dark: #2D2A32;           /* Used for header, footer, dark backgrounds */
+  --secondary-dark: #DDD92A;         /* Used for navigation, other dark elements */
+  --primary-light: #FAFDF6;       /* Used for about-site background, light elements */
+  --secondary-light: #EEEFA8;     /* Used for about-club background, other light elements */
+  --mid-color: #EAE151;           /* Used for table borders, accent colors */
+
+  /* Background Images */
+  --bg-texture: url('img/blacktexture.jpg');
+
+  /* Cursor Images */
+  --cursor-default: url("cursor.cur");
+  --cursor-hover: url("select.cur");
+
+  /* Fonts */
+  --font-main: 'BirchLeaf';
+  --font-accent: 'GallaeciaForte';
+}
+
+/* ========================================
+BASIC RESETS & BROWSER CONSISTENCY
+======================================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  cursor: var(--cursor-default), default;
+}
+
+html {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+body {
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+FONT FACE DECLARATIONS
+======================================== */
+@font-face {
+  font-family: 'GallaeciaForte';
+  src: url('fonts/GallaeciaForte.ttf');
+}
+@font-face {
+  font-family: 'BirchLeaf';
+  src: url('fonts/BirchLeaf.ttf');
+}
+
+/* ========================================
+COMPONENTS
+======================================== */
+.header {
+  background-color: var(--primary-dark);
+  background-image: var(--bg-texture);
+  font-family: var(--font-accent);
+  font-size: 40px;
+  color: var(--primary-light);
+  padding: 20px;
+  text-align: center;
+}
+
+.nav {
+  background-color: var(--secondary-dark);
+  background-image: var(--bg-texture);
+  display: flex;
+  padding: 10px;
+  font-family: var(--font-main);
+  width: 100%;
+  text-align: center;
+}
+
+.nav a {
+  color: var(--primary-light);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+a:hover {
+  cursor: var(--cursor-hover), default;
+}
+
+h2 {
+  border-bottom: solid 1px;
+}
+
+.about-site {
+  padding: 20px;
+  font-family: var(--font-main);
+  background-color: var(--primary-light);
+}
+
+.about-club {
+  padding: 10px;
+  font-family: var(--font-main);
+  background-color: var(--secondary-light);
+  border: 1px solid;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: stretch;
+}
+
+.about-site {
+  grid-column: 1;
+}
+
+aside {
+  padding: 10px;
+  grid-column: 2;
+  background-image: var(--bg-texture);
+    background-color: var(--secondary-dark);
+  color: var(--primary-light);
+}
+
+.members table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+button {
+  border: ridge var(--primary-dark) 30px;
+  font-family: var(--font-main);
+  font-size: 20px;
+  margin: auto;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.members th, .members td {
+  font-family: var(--font-main);
+  border: 1px solid var(--mid-color);
+  padding: 10px;
+  text-align: center;
+}
+
+.members th {
+  font-family: var(--font-accent);
+  background-color: var(--primary-light);
+}
+
+.footer {
+  font-family: var(--font-accent);
+  background-color: var(--primary-dark);
+  background-image: var(--bg-texture);
+  color: var(--primary-light);
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ========================================
+MOBILE RESPONSIVENESS
+======================================== */
+@media only screen and (max-width: 850px) {
+  main {
+    display: block;
+    width: 100%;
+  }
+  .about-club {
+    display: block;
+    width: 100%;
+  }
+  aside {
+    padding: 20px;
+    display: block;
+    width: 100%;
+  }
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  table thead {
+    display: none;
+  }
+  table td {
+    display: block;
+    padding: .6em;
+  }
+  table th {
+    display: block;
+    padding: .6em;
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    width: 200px;
+  }
+  table th[data-label]:before {
+    content: attr(data-label);
+  }
+}
+
+/* ========================================
+LAPTOP/DESKTOP MEDIA QUERIES
+======================================== */
+@media all and (min-width: 769px) {
+  /* Add laptop-specific styles here */
+}
+
+@media all and (min-width: 1024px) {
+  /* Add desktop-specific styles here */
+}
