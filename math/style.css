@@ -3,11 +3,11 @@ ROOT VARIABLES (EDIT THESE TO CHANGE THEME)
 ======================================== */
 :root {
   /* Colors */
-  --primary-dark: #562C2C;           /* Used for header, footer, dark backgrounds */
-  --secondary-dark: #F2542D;         /* Used for navigation, other dark elements */
-  --primary-light: #F5DFBB;       /* Used for about-site background, light elements */
-  --secondary-light: #0E9594;     /* Used for about-club background, other light elements */
-  --mid-color: #127475;           /* Used for table borders, accent colors */
+  --primary-dark: #13293D;           /* Used for header, footer, dark backgrounds */
+  --secondary-dark: #16324F;         /* Used for navigation, other dark elements */
+  --primary-light: #3E92CC;       /* Used for about-site background, light elements */
+  --secondary-light: #2A628F;     /* Used for about-club background, other light elements */
+  --mid-color: #18435A;           /* Used for table borders, accent colors */
 
   /* Background Images */
   --bg-texture: url('img/blacktexture.jpg');
@@ -59,7 +59,7 @@ COMPONENTS
 ======================================== */
 .header {
   background-color: var(--primary-dark);
-  background-image: var(--bg-texture);
+  background-image: url(../css/img/bubblesbg.gif);
   font-family: var(--font-accent);
   font-size: 40px;
   color: var(--primary-light);
