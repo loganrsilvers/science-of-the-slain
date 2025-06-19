@@ -3,11 +3,11 @@ ROOT VARIABLES (EDIT THESE TO CHANGE THEME)
 ======================================== */
 :root {
   /* Colors */
-  --primary-dark: #170F11;           /* Used for header, footer, dark backgrounds */
-  --secondary-dark: #402039;         /* Used for navigation, other dark elements */
-  --primary-light: #E2FCEF;       /* Used for about-site background, light elements */
-  --secondary-light: #9B287B;     /* Used for about-club background, other light elements */
-  --mid-color: #5C164E;             /* Used for table borders, accent colors */
+  --primary-dark: #113537;           /* Used for header, footer, dark backgrounds */
+  --secondary-dark: #37505C;         /* Used for navigation, other dark elements */
+  --primary-light: #FFEAD0;       /* Used for about-site background, light elements */
+  --secondary-light: #F76F8E;     /* Used for about-club background, other light elements */
+  --mid-color: #96616B;           /* Used for table borders, accent colors */
 
   /* Background Images */
   --bg-texture: url('img/blacktexture.jpg');
