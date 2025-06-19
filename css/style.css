@@ -1,215 +1,220 @@
-/* Basic CSS resets -- leveling slight inconsistencies in browsers */
+/* ========================================
+ROOT VARIABLES (EDIT THESE TO CHANGE THEME)
+======================================== */
+:root {
+  /* Colors */
+  --primary-dark: #12130F;           /* Used for header, footer, dark backgrounds */
+  --secondary-dark: #FF2E00;         /* Used for navigation, other dark elements */
+  --primary-light: #FFFECB;       /* Used for about-site background, light elements */
+  --secondary-light: #FEA82F;     /* Used for about-club background, other light elements */
+  --mid-color: #5448C8;           /* Used for table borders, accent colors */
+
+  /* Background Images */
+  --bg-texture: url('img/blacktexture.jpg');
+
+  /* Cursor Images */
+  --cursor-default: url("cursor.cur");
+  --cursor-hover: url("select.cur");
+
+  /* Fonts */
+  --font-main: 'BirchLeaf';
+  --font-accent: 'GallaeciaForte';
+}
+
+/* ========================================
+BASIC RESETS & BROWSER CONSISTENCY
+======================================== */
 html, body {
-	margin:0px;
-	padding:0px;
-	height:100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  cursor: var(--cursor-default), default;
 }
 
 html {
-		/* Standard text-settings below */
-	font-size: 1em;
-    line-height: 1.4em;
+  font-size: 1em;
+  line-height: 1.4em;
 }
-
-
-@font-face {
-    font-family: 'GallaeciaForte'; 
-    src: url('fonts/GallaeciaForte.ttf');
-}
-@font-face {
-    font-family: 'BirchLeaf'; 
-    src: url('fonts/BirchLeaf.ttf');
-}
-html, body {
-    cursor: url("cursor.cur"), default;
-}
-/* Mobile First CSS: we'll design for phone sizes first, then add media queries for larger screens later */
 
 body {
-	font-family: 'BirchLeaf';
-	margin: 0;
-	padding: 0;
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
 }
 
+/* ========================================
+FONT FACE DECLARATIONS
+======================================== */
+@font-face {
+  font-family: 'GallaeciaForte';
+  src: url('fonts/GallaeciaForte.ttf');
+}
+@font-face {
+  font-family: 'BirchLeaf';
+  src: url('fonts/BirchLeaf.ttf');
+}
+
+/* ========================================
+COMPONENTS
+======================================== */
 .header {
-	background-color: #333;
-	background-image: url('img/blacktexture.jpg');
-	font-family: 'GallaeciaForte';
-	font-size: 40px;
-	color: white;
-	padding: 20px;
-	text-align: center;
+  background-color: var(--primary-dark);
+  background-image: var(--bg-texture);
+  font-family: var(--font-accent);
+  font-size: 40px;
+  color: var(--primary-light);
+  padding: 20px;
+  text-align: center;
 }
 
 .nav {
-	background-color: #444;
-	display: flex;
-	background-image: url('img/blacktexture.jpg');
-	padding: 10px;
-	font-family: 'BirchLeaf';
-	width: 100%;
-	text-align: center;
+  background-color: var(--secondary-dark);
+  background-image: var(--bg-texture);
+  display: flex;
+  padding: 10px;
+  font-family: var(--font-main);
+  width: 100%;
+  text-align: center;
 }
 
 .nav a {
-	color: white;
-	text-decoration: none;
-	margin: 0 10px;
+  color: var(--primary-light);
+  text-decoration: none;
+  margin: 0 10px;
 }
-a:hover{
-	cursor: url("select.cur"), default;
+
+a:hover {
+  cursor: var(--cursor-hover), default;
 }
 
 h2 {
-	border-bottom: solid 1px;
+  border-bottom: solid 1px;
 }
 
 .about-site {
-	padding: 20px;
-	font-family: 'BirchLeaf';
-	background-color: #f0f0f0;
+  padding: 20px;
+  font-family: var(--font-main);
+  background-color: var(--primary-light);
 }
+
 .about-club {
-	padding: 10px;
-	font-family: 'BirchLeaf';
-	background-color: white;
-	border: 1px solid;
+  padding: 10px;
+  font-family: var(--font-main);
+  background-color: var(--secondary-light);
+  border: 1px solid;
 }
 
 main {
-	display: grid;
-	grid-template-columns: 70% 30%;
-	align-items: stretch; /* Ensures both elements have the same height */
-  }
-  
-  .about-site {
-	grid-column: 1;
-  }
-  
-  aside {
-	padding: 10px;
-	grid-column: 2;
-	background-image: url('img/blacktexture.jpg');
-	color: #f0f0f0;
-  }
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: stretch;
+}
+
+.about-site {
+  grid-column: 1;
+}
+
+aside {
+  padding: 10px;
+  grid-column: 2;
+  background-image: var(--bg-texture);
+    background-color: var(--secondary-dark);
+  color: var(--primary-light);
+}
 
 .members table {
-	width: 100%;
-	border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 button {
-	border: ridge black 30px;
-	font-family: 'BirchLeaf';
-	font-size: 20px;
-	margin: auto;
-	display: block;
-	margin-bottom: 30px;
+  border: ridge var(--primary-dark) 30px;
+  font-family: var(--font-main);
+  font-size: 20px;
+  margin: auto;
+  display: block;
+  margin-bottom: 30px;
 }
 
-.members th, td {
-	font-family: 'BirchLeaf';
-	border: 1px solid #865959;
-	padding: 10px;
-	text-align: center;
+.members th, .members td {
+  font-family: var(--font-main);
+  border: 1px solid var(--mid-color);
+  padding: 10px;
+  text-align: center;
 }
 
 .members th {
-	font-family: 'GallaeciaForte';
-	background-color: #f0f0f0;
+  font-family: var(--font-accent);
+  background-color: var(--primary-light);
 }
 
 .footer {
-	font-family: 'GallaeciaForte';
-	background-color: #333;
-	color: white;
-	padding: 10px;
-	text-align: center;
-	position: relative;
-	bottom: 0;
-	width: 100%;
-	background-image: url('img/blacktexture.jpg');
+  font-family: var(--font-accent);
+  background-color: var(--primary-dark);
+  background-image: var(--bg-texture);
+  color: var(--primary-light);
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
-
-@media only screen and (max-width: 850px) {
-	main{
-		display: block;
-    	width: 100%;
-	}
-	.about-club{
-		display: block;
-    	width: 100%;
-	}
-	aside{
-		padding: 20px;
-		display: block;
-    	width: 100%;
-	}
-	table {
-		border: 0;
-	}
-	
-	table caption {
-		font-size: 1.3em;
-	}
-	h1{
-		font-size: 30px;
-	}
-	
-	table thead {
-		display: none;
-	}
-	
-	table td {
-		display: block;
-		padding: .6em;
-	}
-	
-	table th {
-		display: block;
-		padding: .6em;
-	}
-	
-	table td:before {
-		content: attr(data-label);
-		float: left;
-		font-weight: bold;
-		width: 200px;
-	}
-	
-	table th[data-label]:before {
-		content: attr(data-label);
-	}
-}
-
-
-
-
 
 /* ========================================
-MEDIA QUERIES!
-You can adjust the min-width numbers below, and add as many new media queries as you need.
+MOBILE RESPONSIVENESS
 ======================================== */
+@media only screen and (max-width: 850px) {
+  main {
+    display: block;
+    width: 100%;
+  }
+  .about-club {
+    display: block;
+    width: 100%;
+  }
+  aside {
+    padding: 20px;
+    display: block;
+    width: 100%;
+  }
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  table thead {
+    display: none;
+  }
+  table td {
+    display: block;
+    padding: .6em;
+  }
+  table th {
+    display: block;
+    padding: .6em;
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    width: 200px;
+  }
+  table th[data-label]:before {
+    content: attr(data-label);
+  }
+}
 
-
-
-/* Minimum width for laptops. */
+/* ========================================
+LAPTOP/DESKTOP MEDIA QUERIES
+======================================== */
 @media all and (min-width: 769px) {
-	
-	
-	
-	
-} /* closes 769px+ */
+  /* Add laptop-specific styles here */
+}
 
-
-
-
-/* Minimum width for desktop screens. */
 @media all and (min-width: 1024px) {
-	
-	
-	
-	
-} /* closes 1024px+ */
-
-
+  /* Add desktop-specific styles here */
+}
